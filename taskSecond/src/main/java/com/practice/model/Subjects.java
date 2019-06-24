@@ -52,10 +52,16 @@ public class Subjects {
 
     @Override
     public String toString() {
-        return "Subjects{" +
-                "id=" + id +
-                ", name=" + name +
-                ", teacher=" + teacher +
-                '}';
+        StringBuilder builder = new StringBuilder().append("Subjects{")
+                .append("id=" + id)
+                .append(", name=" + name)
+                .append(", teacher=" + teacher)
+                .append('}');
+        if (teacher != null){
+            builder.append(", teacher = " + teacher.getName());
+        }
+
+        builder.append('}');
+        return builder.toString();
     }
 }

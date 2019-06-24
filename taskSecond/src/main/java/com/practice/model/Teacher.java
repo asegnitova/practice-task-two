@@ -28,11 +28,10 @@ public class Teacher {
     public Teacher() {
     }
 
-    public Teacher(String name, String lastName, Degree degree, Set<Subjects> subjects) {
+    public Teacher(String name, String lastName, Degree degree) {
         this.name = name;
         this.lastName = lastName;
         this.degree = degree;
-        this.subjects = subjects;
     }
 
     public int getId() {
@@ -75,6 +74,10 @@ public class Teacher {
         this.subjects = subjects;
     }
 
+    public void addSubjects(Subjects subject) {
+        this.subjects.add(subject);
+        subject.setTeacher(this);
+    }
     @Override
     public String toString() {
         return "Teacher{" +
